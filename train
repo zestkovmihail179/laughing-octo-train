@@ -1,0 +1,16 @@
+struct CustomViewBuilder<Content: View>: View {
+    
+    let content: Content
+    
+    init(content: () -> Content) {
+        self.content = content()
+    }
+    
+    var body: some View {
+        VStack {
+            content
+            content
+            content
+        }
+    }
+}
